@@ -1,0 +1,17 @@
+# themes from https://github.com/alacritty/alacritty-theme
+
+# import = ["/Users/mischa/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+import = ["/home/mg/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+
+[font]
+size = 35
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[window]
+decorations = "none"
+
+[window.padding]
+x = 7
+y = 0

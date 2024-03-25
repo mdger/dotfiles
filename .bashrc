@@ -130,6 +130,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 [ -s "/home/mg/.jabba/jabba.sh" ] && source "/home/mg/.jabba/jabba.sh"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
+export PATH="$PATH:/home/mg/.cargo/bin"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export XDG_CONFIG_HOME="$HOME/.config"

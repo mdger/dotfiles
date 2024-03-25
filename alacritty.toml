@@ -1,4 +1,5 @@
 # themes from https://github.com/alacritty/alacritty-theme
+# $XDG_CONFIG_HOME/alacritty.toml
 
 # import = ["/Users/mischa/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 import = ["/home/mg/.config/alacritty/themes/themes/gruvbox_dark.toml"]

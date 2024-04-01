@@ -3,5 +3,5 @@
 -- Add any additional keymaps here
 vim.keymap.del("n", "[b")
 vim.keymap.del("n", "]b")
-vim.keymap.del("n", "<Space>gG")
-vim.keymap.del("n", "<Space>gg")
+-- vim.keymap.del("n", "<Space>gG")
+-- vim.keymap.del("n", "<Space>gg")

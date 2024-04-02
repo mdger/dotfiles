@@ -15,8 +15,8 @@ return {
                 fish = { "fish_indent" },
                 sh = { "shfmt" },
                 php = { "pretty-php" },
-                ["sql"] = { "sqlfmt" },
-                ["*"] = { "injected" }, -- enables injected-lang formatting for all filetypes
+                ["sql"] = { "sqlfluff" },
+                ["*"] = { "injected" }, -- enables injected-lang :quietformatting for all filetypes
             },
             -- The options you set here will be merged with the builtin formatters.
             -- You can also define any custom formatters here.
@@ -35,6 +35,16 @@ return {
                 -- shfmt = {
                 --   prepend_args = { "-i", "2", "-ci" },
                 -- },
+                --               ["sql-formatter"] = {
+                --                   args = {
+                --                       "-c",
+                --                       [[{
+                -- "language": "sql",
+                -- "tabWidth": 4,
+                -- "keywordCase": "upper",
+                -- "linesBetweenQueries": 1
+                --                   }]],
+                --                   },
             },
         },
     },

@@ -1,0 +1,32 @@
+#!/bin/bash
+# Customize the following:
+containerName=$CONTAINER
+# detect local path and remove from args
+argsInput=${@}
+runFile=$(echo $argsInput | awk '{print $1}')
+phpTestPath=$(dirname "$runFile")
+pushd $phpTestPath >/dev/null
+projectPath="$(git rev-parse --show-toplevel)"
+pushd >/dev/null
+
+# replace with local
+args=("${argsInput/$projectPath\//}")
+
+# replace strange line with (data set .*)
+args=("${args//(*/}")
+
+# Detect path
+container=$(docker ps -n=-1 --filter name=$containerName --format="{{.ID}}")
+dockerPath=$(docker inspect --format {{.Config.WorkingDir}} $container)
+
+## debug
+echo "Container: "$containerName
+echo "Params: "${args[@]}
+echo "Docker: "$dockerPath
+echo "Local:  "$projectPath
+echo "Result: "$outputPath
+
+# Run the tests
+docker exec -i $container php -d memory_limit=-1 ${args[@]}
+
+# echo "docker exec -i "$container" php -d memory_limit=-1 "${args[@]}

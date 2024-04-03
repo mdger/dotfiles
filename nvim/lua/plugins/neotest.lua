@@ -9,6 +9,9 @@ local remote_cmd = "vendor/bin/phpunit"
 if currentCwd ~= nil and string.find(currentCwd, "mvc-cockpit", 0, true) then
     container = "cockpit-php"
     remote_cmd = "vendor/bin/phpunit -c ./tests/phpunit.xml"
+elseif currentCwd ~= nil and string.find(currentCwd, "mvc-vmvb", 0, true) then
+    container = "vmvb_php_requests"
+    remote_cmd = "vendor/bin/phpunit -c ./test/phpunit.xml"
 end
 
 print("neotest.lua container", container, "cmd '", remote_cmd, "'")

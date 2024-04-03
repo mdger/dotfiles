@@ -4,6 +4,7 @@ return {
         "CRAG666/code_runner.nvim",
         config = true,
         opts = {
+            -- mode = "better_term",
             filetype = {
 
                 -- "php": "string=$fullFileName;prefix=\"$workspaceRoot/\";docker exec hz-comm11 php -dxdebug.start_with_request=yes ${string#\"$prefix\"}",

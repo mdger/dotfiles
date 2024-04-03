@@ -20,11 +20,11 @@ container=$(docker ps -n=-1 --filter name=$containerName --format="{{.ID}}")
 dockerPath=$(docker inspect --format {{.Config.WorkingDir}} $container)
 
 ## debug
-echo "Container: "$containerName
-echo "Params: "${args[@]}
-echo "Docker: "$dockerPath
-echo "Local:  "$projectPath
-echo "Result: "$outputPath
+# echo "Container: "$containerName
+# echo "Params: "${args[@]}
+# echo "Docker: "$dockerPath
+# echo "Local:  "$projectPath
+# echo "Result: "$outputPath
 
 # Run the tests
 docker exec -i $container php -d memory_limit=-1 ${args[@]}

@@ -24,6 +24,11 @@ return {
             formatters = {
                 injected = { options = { ignore_errors = true } },
                 -- # Example of using dprint only when a dprint.json file is present
+                ["pretty-php"] = {
+                    -- https://github.com/lkrms/pretty-php/blob/main/docs/Usage.md#configuration
+                    -- dont simplify strings
+                    prepend_args = { "-S" },
+                },
                 -- dprint = {
                 --   condition = function(ctx)
                 --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]

@@ -1,11 +1,10 @@
-# themes from https://github.com/alacritty/alacritty-theme
-# $XDG_CONFIG_HOME/alacritty.toml
+shell = "debian"
 
-# import = ["/Users/mischa/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-import = ["/home/mg/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+[env]
+term = "xterm-256color"
 
 [font]
-size = 35
+size = 11
 
 [font.normal]
 family = "FiraCode Nerd Font"
@@ -16,3 +15,9 @@ decorations = "none"
 [window.padding]
 x = 7
 y = 0
+
+[keyboard]
+bindings = [
+# { key = "A", mods = "Control", chars = "tmux new-session -A -s general\n" },
+# { key = "G", mods = "Control", chars = "lazygit\n" },
+]

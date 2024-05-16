@@ -1,12 +1,15 @@
 {
-    "phpunit.command": "docker exec -it cockpit-php",
+    // "phpunit.command": "docker exec -it cockpit-php",
+    "phpunit.command": "docker exec -it monitoring_server",
     "phpunit.args": [
         "-c",
-        "./tests/phpunit.xml", // Any args, check `phpunit --help`
+        "./test/phpunit.xml", // Any args, check `phpunit --help`
+        // "./tests/phpunit.xml", // Any args, check `phpunit --help`
         "--no-coverage",
     ],
     "phpunit.paths": {
-        "${workspaceFolder}": "/opt/meteoviva" // ${workspaceFolder} is mapped to /opt/meteoviva
+        "${workspaceFolder}": "/srv/app" // ${workspaceFolder} is mapped to /opt/meteoviva
+        // "${workspaceFolder}": "/opt/meteoviva" // ${workspaceFolder} is mapped to /opt/meteoviva
     },
     // "code-runner.fileDirectoryAsCwd": true,
     "code-runner.executorMap": {

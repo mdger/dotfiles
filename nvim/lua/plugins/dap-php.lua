@@ -14,7 +14,8 @@ return {
               -- using herd or docker. To get it to work, change the order of the mappings.
               -- The first mapping should be the one that you are actively using.
               -- This only started recently, so I don't know what changed.
-              ["/opt/meteoviva"] = "${workspaceFolder}",
+              -- ["/opt/meteoviva"] = "${workspaceFolder}",
+              ["/srv/app"] = "${workspaceFolder}",
               -- ["${workspaceFolder}"] = "${workspaceFolder}",
               -- ["/var/www/html"] = "${workspaceFolder}",
             },

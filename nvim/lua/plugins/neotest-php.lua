@@ -10,8 +10,9 @@ return {
           env = function()
             -- read from .vscode/settings.json
             local neoconf = require("neoconf")
-            local confArgs = neoconf.get("phpunit.args")
-            local confCmd = neoconf.get("phpunit.command")
+            -- local confArgs = neoconf.get("phpunit.args")
+            local confArgs = neoconf.get("phpunit.args", nil, { buffer = vim.api.nvim_get_current_buf() })
+            local confCmd = neoconf.get("phpunit.command", nil, { buffer = vim.api.nvim_get_current_buf() })
 
             local phpunitArgs = ""
             for _, value in ipairs(confArgs) do

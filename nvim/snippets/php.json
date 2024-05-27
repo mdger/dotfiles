@@ -1,0 +1,9 @@
+{
+    "TODO": {
+        "prefix": [
+            "todo",
+            "to"
+        ],
+        "body": "// TODO: $0"
+    }
+}

@@ -1,3 +1,4 @@
+require("dap.ext.vscode").load_launchjs(nil, {})
 return {
   "jay-babu/mason-nvim-dap.nvim",
   opts = {
@@ -14,8 +15,8 @@ return {
               -- using herd or docker. To get it to work, change the order of the mappings.
               -- The first mapping should be the one that you are actively using.
               -- This only started recently, so I don't know what changed.
-              ["/opt/meteoviva"] = "${workspaceFolder}",
-              -- ["/srv/app"] = "${workspaceFolder}",
+              -- ["/opt/meteoviva"] = "${workspaceFolder}",
+              ["/srv/app"] = "${workspaceFolder}",
               -- ["${workspaceFolder}"] = "${workspaceFolder}",
               -- ["/var/www/html"] = "${workspaceFolder}",
             },

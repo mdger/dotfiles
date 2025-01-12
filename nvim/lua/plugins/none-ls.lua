@@ -22,7 +22,7 @@ return {
         -- null_ls.builtins.formatting.phpcbf,
         -- null_ls.builtins.diagnostics.phpcs,
         -- null_ls.builtins.diagnostics.phpmd,
-        null_ls.builtins.diagnostics.phpstan,
+        -- null_ls.builtins.diagnostics.phpstan,
       })
     end,
   },

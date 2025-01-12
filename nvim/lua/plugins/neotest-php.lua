@@ -5,11 +5,23 @@ return {
       "olimorris/neotest-phpunit",
     },
     opts = {
+
+      consumers = {
+        overseer = require("neotest.consumers.overseer"),
+      },
+      output = {
+        open_on_run = false,
+      },
+      output_panel = {
+        enabled = true,
+      },
+      quickfix = {
+        enabled = false,
+      },
       adapters = {
         ["neotest-phpunit"] = {
           env = function()
             local path = vim.fn.getcwd() .. "/.vscode/settings.json"
-            -- local configs = require("dap.ext.vscode").getconfigs(path)
             local json = require("scripts/json").getconfigs(path)
             local confArgs = json["phpunit.args"]
             local confCmd = json["phpunit.command"]

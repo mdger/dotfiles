@@ -41,11 +41,10 @@ echo "Params: "${args[@]}
 echo "Docker: "$dockerPath
 # echo "Local:  "$projectPath
 echo "Result: "$outputPath
+echo "Command: docker exec -i "$container" php -dxdebug.start_with_request=yes -d memory_limit=-1 "$phpunitPath" "${args[@]}
 
 # Run the tests
 docker exec -i $container php -d memory_limit=-1 $phpunitPath ${args[@]}
-
-echo "docker exec -i "$container" php -dxdebug.start_with_request=yes -d memory_limit=-1 "$phpunitPath" "${args[@]}
 
 # copy results
 docker cp -a "$container:$outputPath" "$outputPath" | - &>/dev/null

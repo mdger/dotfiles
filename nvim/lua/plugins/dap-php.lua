@@ -1,32 +1,23 @@
-require("dap.ext.vscode").load_launchjs(nil, {})
 return {
-  "jay-babu/mason-nvim-dap.nvim",
-  opts = {
-    handlers = {
-      php = function(config)
-        config.configurations = {
-          {
-            type = "php",
-            request = "launch",
-            name = "Listen for Xdebug 9005",
-            port = 9005,
-            pathMappings = {
-              -- For some reason xdebug sometimes fails for me, depending on me
-              -- using herd or docker. To get it to work, change the order of the mappings.
-              -- The first mapping should be the one that you are actively using.
-              -- This only started recently, so I don't know what changed.
-              -- ["/opt/meteoviva"] = "${workspaceFolder}",
-              ["/srv/app"] = "${workspaceFolder}",
-              -- ["${workspaceFolder}"] = "${workspaceFolder}",
-              -- ["/var/www/html"] = "${workspaceFolder}",
-            },
-          },
-        }
-        require("mason-nvim-dap").default_setup(config) -- don't forget this!
-      end,
+
+  {
+    "mfussenegger/nvim-dap",
+    optional = true,
+    dependencies = {
+
+      "williamboman/mason.nvim",
+      opts = { ensure_installed = {
+        "php-debug-adapter",
+      } },
     },
-    ensure_installed = {
-      "php",
-    },
+    opts = function()
+      local dap = require("dap")
+      local path = require("mason-registry").get_package("php-debug-adapter"):get_install_path()
+      -- dap.adapters.php = {
+      --   type = "executable",
+      --   command = "node",
+      --   args = { path .. "/extension/out/phpDebug.js" },
+      -- }
+    end,
   },
 }

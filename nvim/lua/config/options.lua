@@ -8,3 +8,4 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.o.termguicolors = true
+vim.g.lazyvim_php_lsp = "intelephense"
